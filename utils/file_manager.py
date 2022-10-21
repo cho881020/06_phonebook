@@ -13,4 +13,6 @@ class FileManager:
     def write_content_to_file(cls, content):
 
         with open(cls.file_name, 'a', encoding='UTF-8') as file:
-            pass # 지정된 파일명으로 내용 이어붙이기 모드 진입.
+            # pass # 지정된 파일명으로 내용 이어붙이기 모드 진입.
+            # 단순히 입력 내용을 붙이기만 하겠다. + 줄바꿈
+            file.write(f'{content}\n')
