@@ -17,6 +17,14 @@ def get_contact_info():
     return save_content
 
 
+# 연락처 목록 파일에서 불러내서 / 가공 후 표시
+def print_all_contacts():
+
+    # 파일매니저에서 목록을 받아오자.
+    content_list = FileManager.read_content_in_file()
+    print(content_list)
+
+
 # 사용자가 0을 넣을때 까지 반복
 # 무한히 입력 받다가, 0을 넣으면 종료
 
@@ -48,5 +56,11 @@ while True:
 
     elif input_num == 2:
         print('목록 조회를 선택했습니다.')
+
+        # 파일매니저에서, 저장된 연락처 불러오기 => 화면에 출력
+        # 별도 함수에서 실행
+
+        print_all_contacts()
+
     else:
         print('잘못된 입력입니다.')
