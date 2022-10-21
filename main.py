@@ -1,6 +1,9 @@
 
 # 전화번호부 예시 문제
 
+# 파일 내용 처리 클래스 불러오기
+from utils import FileManager
+
 # 사용자가 0을 넣을때 까지 반복
 # 무한히 입력 받다가, 0을 넣으면 종료
 
@@ -17,6 +20,12 @@ while True:
         break
     elif input_num == 1:
         print('전화번호 추가를 선택했습니다.')
+
+        # 임시 Test : FileManager로 내용 저장 가능?
+        # 사용할 메쏘드 : 클래스 메쏘드
+
+        FileManager.write_content_to_file('테스트문구')
+
     elif input_num == 2:
         print('목록 조회를 선택했습니다.')
     else:
