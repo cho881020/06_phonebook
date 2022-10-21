@@ -22,7 +22,31 @@ def print_all_contacts():
 
     # 파일매니저에서 목록을 받아오자.
     content_list = FileManager.read_content_in_file()
-    print(content_list)
+    # print(content_list)
+
+    # ,로만 이어진 str 들을 => 가공해서 출력
+    for content  in  content_list:
+        # 가공 1. 줄바꿈 제거
+        # str의 replace (치환) 기능 활용ㄴ 
+        content =  content.replace('\n', '')
+        # print(content)
+
+        # 가공 2. 조경진(35세) : 010-5112-3237 형태.
+        # ,로 구별된 데이터들을 각각 추출.
+        # 조경진,010,1988 를 => ,를 기준으로 분리 => 목록으로.
+        # split 기능 활용
+
+        info_list = content.split(',')
+        # print(info_list)
+
+        name = info_list[0]
+        phone_num = info_list[1]
+        birth_year = int(info_list[2])
+        age = 2022 - birth_year + 1
+
+        print(f'{name}({age}세) : {phone_num}')
+
+
 
 
 # 사용자가 0을 넣을때 까지 반복
